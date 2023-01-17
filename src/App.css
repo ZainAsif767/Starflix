@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+@import url('https://fonts.googleapis.com/css?family=Roboto:700,900');
 
 * {
   margin: 0;
@@ -26,20 +27,58 @@ body {
   flex-direction: column;
 }
 
+
 h1 {
-  font-size: 3rem;
-  letter-spacing: 0.9px;
-  background: linear-gradient(90deg,
-      rgba(249, 211, 180, 1) 0%,
-      rgba(249, 211, 180, 0) 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  width: fit-content;
+  text-align: center;
+  font-family: 'Roboto';
+  font-size: 12vmin;
+  font-weight: 700;
+  animation: netflix_style 3.5s normal;
+  outline: none;
+  white-space: nowrap;
+  color: #e90418;
+}
+
+@keyframes netflix_style {
+  0% {
+    text-shadow: makelongshadow(100, 1);
+    color: #f3f3f3;
+    transform: scale(1.5, 1.5);
+  }
+
+  10% {
+    text-shadow: makelongshadow(100, 1.5);
+    color: #f3f3f3;
+    transform: scale(1.5, 1.5);
+  }
+
+  15% {
+    color: #f3f3f3;
+  }
+
+  20% {
+    color: #e90418;
+    text-shadow: none;
+    transform: scale(1.1, 1.1);
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+    color: #e90418;
+    transform: scale(0.85, 0.9);
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 .search {
-  width: 71%;
+  width: 70%;
   margin: 4rem 0 2rem;
 
   display: flex;
@@ -71,21 +110,6 @@ h1 {
   height: 35px;
   cursor: pointer;
 }
-
-/* .search button {
-  padding: 20px 40px;
-  border-radius: 0.5rem;
-  margin-left: 15px;
-  color: #a1a1a1;
-  font-family: var(--font-raleway);
-  font-weight: 900;
-  letter-spacing: 0.75px;
-  font-size: 1.25rem;
-  cursor: pointer;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-} */
 
 .empty {
   width: 100%;
@@ -138,6 +162,7 @@ h1 {
 .movie:hover {
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
   transform: scale(1.05, 1.05);
+  cursor: pointer;
 }
 
 .movie div:nth-of-type(2) {
@@ -178,7 +203,7 @@ h1 {
 
 .movie:hover div:nth-of-type(2) {
   height: 100%;
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 .movie:hover div:nth-of-type(3) {
@@ -188,6 +213,8 @@ h1 {
 .movie:hover div:nth-of-type(1) {
   opacity: 1;
 }
+
+
 
 @media screen and (max-width: 600px) {
   .app {
