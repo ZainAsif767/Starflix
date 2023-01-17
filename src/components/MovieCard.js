@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MovieCard(props) {
     return (
-        <div className="movie">
+        <div key={props.movie.imdbID} className="movie">
             <div>
                 <p>{props.movie.Year}</p>
             </div>
@@ -12,6 +12,7 @@ export default function MovieCard(props) {
             <div>
                 <span>{props.movie.Type}</span>
                 <h3>{props.movie.Title}</h3>
+
             </div>
         </div>
     )
