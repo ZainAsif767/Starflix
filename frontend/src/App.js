@@ -76,6 +76,7 @@ export default function App() {
       {showMovie}
       <br />
       <h2>End</h2>
+      <h2>End</h2>
     </div>
   )
 }
